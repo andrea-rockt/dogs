@@ -16,19 +16,5 @@ object Eq {
 
   def fromUniversalEquality[A]: Eq[A] = _ == _
 
-  implicit def intEq: Eq[Int] = fromUniversalEquality[Int]
-
-  implicit def doubleEq: Eq[Double] = fromUniversalEquality[Double]
-
-  implicit def floatEq: Eq[Float] = fromUniversalEquality[Float]
-
-  implicit def longEq: Eq[Long] = fromUniversalEquality[Long]
-
-  implicit def shortEq: Eq[Short] = fromUniversalEquality[Short]
-
-  implicit def byteEq: Eq[Byte] = fromUniversalEquality[Byte]
-
-  implicit def stringEq: Eq[String] = fromUniversalEquality[String]
-
 }
 
