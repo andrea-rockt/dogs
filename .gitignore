@@ -1,6 +1,6 @@
 # IntelliJ IDEA
 .idea
-
+.scannerwork
 # Spark tmp dir
 tmp
 

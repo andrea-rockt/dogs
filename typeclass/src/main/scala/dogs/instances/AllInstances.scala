@@ -1,7 +1,7 @@
 package dogs.instances
 
-trait AllInstances extends SemigroupInstances
-                      with EqInstances
-                      with MonoidInstances
-                      with FunctorInstances
-                      with ApplicativeInstances
+trait AllInstances extends ScalaLangInstances
+                      with ListInstances
+                      with OptionInstances
+                      with VectorInstances
+                      with TupleInstances

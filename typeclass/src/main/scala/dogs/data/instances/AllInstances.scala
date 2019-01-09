@@ -1,5 +1,6 @@
 package dogs.data.instances
 
-trait AllInstances extends EqInstances
-                      with ApplicativeInstances
-                      with FunctorInstances
+
+trait AllInstances extends IdInstances
+                      with WriterInstances
+                      with StateInstances

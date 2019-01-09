@@ -7,10 +7,10 @@ import org.scalacheck.Arbitrary
 class FunctorSpec extends DogsDataSuite {
 
   {
-    implicit def arbitraryWriter[A:Arbitrary] : Arbitrary[Writer[String, A]]  =
+    implicit def arbitraryWriter[A:Arbitrary] : Arbitrary[Writer[Vector[String], A]]  =
       Arbitrary(Arbitrary.arbitrary[A].map(x => Writer(x)))
 
-    checkAll("Writer functor", FunctorTests[Writer[String, ?]].functor[String, String, String])
+    checkAll("Writer functor", FunctorTests[Writer[Vector[String], ?]].functor[String, String, String])
   }
 
   checkAll("Id functor", FunctorTests[Id].functor[String, String, String])

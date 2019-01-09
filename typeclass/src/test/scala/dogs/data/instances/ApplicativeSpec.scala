@@ -7,10 +7,10 @@ import org.scalacheck.Arbitrary
 class ApplicativeSpec extends DogsDataSuite {
 
   {
-    implicit def arbitraryWriter[A:Arbitrary] : Arbitrary[Writer[String, A]]  =
+    implicit def arbitraryWriter[A:Arbitrary] : Arbitrary[Writer[Vector[String], A]]  =
       Arbitrary(Arbitrary.arbitrary[A].map(x => Writer(x)))
 
-    checkAll("Writer Applicative", ApplicativeTests[Writer[String, ?]].functor[String, String, String])
+    checkAll("Writer Applicative", ApplicativeTests[Writer[Vector[String], ?]].functor[String, String, String])
   }
 
   checkAll("Id Applicative", ApplicativeTests[Id].applicative[String,String,String])
