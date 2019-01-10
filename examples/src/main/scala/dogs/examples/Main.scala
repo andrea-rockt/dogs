@@ -15,7 +15,6 @@ object Main
 
   type Log = Vector[(LogTag, Instant, String)]
   type Logged[A] = Writer[Log, A]
-  val loggedMonad = Monad[Logged]
 
   import Logged.tell
 

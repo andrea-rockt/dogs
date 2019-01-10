@@ -1,8 +1,8 @@
 package dogs.laws
 
-import dogs.Applicative
+import dogs.{Applicative, Apply}
 
-trait ApplicativeLaws[F[_]] extends FunctorLaws[F] with Applicative.ToApplicativeOps {
+trait ApplicativeLaws[F[_]] extends FunctorLaws[F] with Applicative.ToApplicativeOps with Apply.ToApplyOps {
   implicit def F: Applicative[F]
 
   def applicativeIdentity[A](a: F[A]): IsEq[F[A]] =

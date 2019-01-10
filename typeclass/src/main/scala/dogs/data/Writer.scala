@@ -7,7 +7,7 @@ case class Writer[L: Monoid, A](run: (L, A)) {
 
   def runA: A = run._2
 
-  def tell(l: L) = Writer(run match {
+  def tell(l: L): Writer[L, A] = Writer(run match {
     case (log, a) =>
       (Monoid[L].combine(log, l), a)
   })
@@ -20,6 +20,4 @@ trait WriterOps {
 
 object Writer {
   def apply[L: Monoid, T](run: => T): Writer[L, T] = Writer((Monoid[L].empty, run))
-
-
 }
